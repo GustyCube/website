@@ -10,7 +10,7 @@ const techStack = {
     'Node.js', 'Express', 'Python', 'Go', 'PHP', 'Lua'
   ],
   'Languages': [
-    'Java', 'Swift', 'Bash', 'PowerShell'
+    'Java', 'Swift', 'Bash', 'PowerShell', 'Racket'
   ],
   'Databases': [
     'MongoDB', 'MySQL', 'Prisma'
