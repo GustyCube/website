@@ -11,6 +11,13 @@ const experiences = [
     current: true
   },
   {
+    role: 'Owner',
+    company: 'GustyCube Ventures',
+    period: '2024–present',
+    description: 'Various projects including app development and research.',
+    current: true
+  },
+  {
     role: 'Developer',
     company: 'Pingcraft.io',
     period: '2024',
