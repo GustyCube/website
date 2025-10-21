@@ -3,33 +3,30 @@ import { Badge } from './ui/badge';
 import { useState } from 'react';
 
 const techStack = {
-  'Frontend': [
-    'JavaScript', 'TypeScript', 'HTML/CSS', 'React', 'Svelte', 'Next.js', 'Tailwind'
-  ],
-  'Backend': [
-    'Node.js', 'Express', 'Python', 'Go', 'PHP', 'Lua'
-  ],
-  'Languages': [
-    'Java', 'Swift', 'Bash', 'PowerShell', 'Racket'
-  ],
-  'Databases': [
-    'MongoDB', 'MySQL', 'Prisma'
-  ],
-  'AI & ML': [
-    'TensorFlow', 'PyTorch'
-  ],
-  'Cloud & DevOps': [
-    'Docker', 'NGINX', 'Vercel', 'Netlify', 'Cloudflare', 'Firebase', 'GCP'
-  ],
-  'Game Development': [
-    'Godot', 'Unity', 'Roblox Studio'
-  ],
-  'Tools': [
-    'Git', 'GitHub', 'GitLab', 'VS Code', 'WebStorm', 'PyCharm', 'Postman', 'Discord.js'
-  ],
-  'Hardware': [
-    'Arduino', 'Raspberry Pi', 'Linux', 'Windows'
-  ]
+  'Frontend Development': {
+    subtitle: '(and associated frameworks)',
+    technologies: ['React', 'TypeScript', 'Next.js', 'Tailwind', 'Svelte']
+  },
+  'Backend Development': {
+    subtitle: '(and associated frameworks)',
+    technologies: ['Node.js', 'Python', 'Go', 'PHP']
+  },
+  'Databases': {
+    subtitle: '(and ORMs)',
+    technologies: ['MongoDB', 'MySQL', 'Prisma']
+  },
+  'Cloud & DevOps': {
+    subtitle: '(and deployment tools)',
+    technologies: ['Docker', 'Vercel', 'Cloudflare', 'Firebase', 'GCP']
+  },
+  'AI & ML': {
+    subtitle: '(and data science tools)',
+    technologies: ['TensorFlow', 'PyTorch']
+  },
+  'Game Development': {
+    subtitle: '(and game engines)',
+    technologies: ['Godot', 'Unity', 'Roblox Studio']
+  }
 };
 
 // Simplified tech badge component
@@ -134,7 +131,7 @@ export function TechStack() {
         </motion.div>
 
         <div className="space-y-12">
-          {Object.entries(techStack).map(([category, technologies], categoryIndex) => (
+          {Object.entries(techStack).map(([category, { subtitle, technologies }], categoryIndex) => (
             <motion.div
               key={category}
               initial={{ opacity: 0, x: categoryIndex % 2 === 0 ? -50 : 50 }}
@@ -145,8 +142,8 @@ export function TechStack() {
             >
               {/* Category header */}
               <div className="text-center mb-6">
-                <motion.h3 
-                  className="text-xl md:text-2xl mb-3 inline-block relative"
+                <motion.h3
+                  className="text-xl md:text-2xl mb-2 inline-block relative"
                   whileHover={{ scale: 1.05 }}
                 >
                   {category}
@@ -158,12 +155,13 @@ export function TechStack() {
                     viewport={{ once: true }}
                   />
                 </motion.h3>
+                <p className="text-sm text-muted-foreground mt-1">{subtitle}</p>
               </div>
 
               {/* Tech grid */}
               <div className="flex flex-wrap justify-center gap-3">
                 {technologies.map((tech, index) => (
-                  <TechBadge 
+                  <TechBadge
                     key={tech}
                     tech={tech}
                     delay={index}
