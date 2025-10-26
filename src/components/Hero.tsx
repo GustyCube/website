@@ -300,7 +300,7 @@ export function Hero() {
             className="flex justify-center gap-8"
           >
             {[
-              { icon: Globe, href: 'https://gustycube.xyz' },
+              { icon: Globe, href: 'https://gustycube.com' },
               { icon: Github, href: 'https://github.com/gustycube' },
               { icon: Youtube, href: 'https://youtube.com/@gustycube' },
               { icon: Mail, href: 'mailto:gc@gustycube.xyz' },

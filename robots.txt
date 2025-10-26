@@ -1,4 +1,4 @@
-# Robots.txt for https://gustycube.xyz
+# Robots.txt for https://gustycube.com
 # Allow all search engines to crawl the website
 
 User-agent: *
@@ -36,4 +36,4 @@ User-agent: MJ12bot
 Disallow: /
 
 # Sitemap location
-Sitemap: https://gustycube.xyz/sitemap.xml
+Sitemap: https://gustycube.com/sitemap.xml
