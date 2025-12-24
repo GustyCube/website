@@ -274,6 +274,28 @@ export function Hero() {
             <motion.div
               whileHover={{ 
                 scale: 1.05,
+                rotateY: 0,
+                z: 20
+              }}
+              whileTap={{ scale: 0.95 }}
+              style={{ transformStyle: 'preserve-3d' }}
+            >
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-xl px-10 py-8 border-2 border-primary/50 hover:bg-primary/10 backdrop-blur-sm"
+                asChild
+              >
+                <a href="https://gustycubeventures.com" target="_blank" rel="noopener noreferrer">
+                  <Globe className="mr-3 h-6 w-6" />
+                  My Ventures
+                </a>
+              </Button>
+            </motion.div>
+            
+            <motion.div
+              whileHover={{ 
+                scale: 1.05,
                 rotateY: -5,
                 z: 20
               }}
