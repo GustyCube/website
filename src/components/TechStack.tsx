@@ -4,31 +4,19 @@ import { useState } from 'react';
 
 const techStack = {
   'Frontend': [
-    'JavaScript', 'TypeScript', 'HTML/CSS', 'React', 'Svelte', 'Next.js', 'Tailwind'
+    'React', 'Next.js', 'Tailwind CSS', 'TypeScript'
   ],
   'Backend': [
-    'Node.js', 'Express', 'Python', 'Go', 'PHP', 'Lua'
-  ],
-  'Languages': [
-    'Java', 'Swift', 'Bash', 'PowerShell', 'Racket'
+    'Go', 'Python'
   ],
   'Databases': [
-    'MongoDB', 'MySQL', 'Prisma'
+    'PostgreSQL', 'MongoDB', 'Redis'
   ],
-  'AI & ML': [
-    'TensorFlow', 'PyTorch'
+  'Infra': [
+    'Linux', 'Docker', 'Cloudflare'
   ],
-  'Cloud & DevOps': [
-    'Docker', 'NGINX', 'Vercel', 'Netlify', 'Cloudflare', 'Firebase', 'GCP'
-  ],
-  'Game Development': [
-    'Godot', 'Unity', 'Roblox Studio'
-  ],
-  'Tools': [
-    'Git', 'GitHub', 'GitLab', 'VS Code', 'WebStorm', 'PyCharm', 'Postman', 'Discord.js'
-  ],
-  'Hardware': [
-    'Arduino', 'Raspberry Pi', 'Linux', 'Windows'
+  'Environment': [
+    'macOS', 'VS Code'
   ]
 };
 
@@ -126,10 +114,10 @@ export function TechStack() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl mb-6">
-            Tech Arsenal
+            Tech Stack
           </h2>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-            A comprehensive toolkit spanning <span className="text-primary">multiple domains</span> and <span className="text-purple-400">cutting-edge technologies</span>.
+            Technologies and tools I work with <span className="text-primary">daily</span> to build <span className="text-purple-400">modern applications</span>.
           </p>
         </motion.div>
 
