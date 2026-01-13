@@ -1,48 +1,9 @@
 import { motion } from 'motion/react';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
-import { Github, Mail, Globe, Youtube, Sparkles, Code2, Brain } from 'lucide-react';
+import { Github, Mail, Globe, Youtube, Code2, Brain, Sparkles } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-// Optimized Matrix-style code rain component
-function CodeRain() {
-  const [columns, setColumns] = useState<string[]>([]);
-  
-  useEffect(() => {
-    const chars = 'abcdefghijklmnopqrstuvwxyz0123456789<>{}[];()';
-    const newColumns = Array(30).fill(0).map(() => 
-      Array(15).fill(0).map(() => chars[Math.floor(Math.random() * chars.length)]).join('')
-    );
-    setColumns(newColumns);
-  }, []);
-
-  return (
-    <div className="absolute inset-0 overflow-hidden opacity-15">
-      {columns.map((column, i) => (
-        <motion.div
-          key={i}
-          className="absolute text-primary/40 text-xs font-mono"
-          style={{ left: `${i * 3.33}%` }}
-          animate={{
-            y: ['-100%', '100vh'],
-          }}
-          transition={{
-            duration: Math.random() * 15 + 15,
-            repeat: Infinity,
-            ease: 'linear',
-            delay: Math.random() * 10,
-          }}
-        >
-          {column.split('').map((char, j) => (
-            <div key={j} className="opacity-70">
-              {char}
-            </div>
-          ))}
-        </motion.div>
-      ))}
-    </div>
-  );
-}
 
 // Simplified floating elements
 function FloatingElements() {
@@ -86,11 +47,11 @@ export function Hero() {
   const [typingText, setTypingText] = useState('');
   const phrases = [
     'Full Stack Developer',
-    'AI Enthusiast', 
-    'Problem Solver',
-    'Open Source Contributor',
-    'Philosophy Enthusiast',
+    'Systems Architect',
+    'Founder & Entrepreneur',
+    'AI Enthusiast',
     'Science Lover',
+    'Philosophy Enthusiast',
     'Ethics Advocate'
   ];
   
@@ -136,7 +97,6 @@ export function Hero() {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <CodeRain />
       <FloatingElements />
       
       {/* Simplified animated background */}
@@ -294,7 +254,7 @@ export function Hero() {
             </motion.div>
             
             <motion.div
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
                 rotateY: -5,
                 z: 20
@@ -311,6 +271,28 @@ export function Hero() {
                 <a href="https://github.com/gustycube" target="_blank" rel="noopener noreferrer">
                   <Github className="mr-3 h-6 w-6" />
                   View My Work
+                </a>
+              </Button>
+            </motion.div>
+
+            <motion.div
+              whileHover={{
+                scale: 1.05,
+                rotateY: -5,
+                z: 20
+              }}
+              whileTap={{ scale: 0.95 }}
+              style={{ transformStyle: 'preserve-3d' }}
+            >
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-xl px-10 py-8 border-2 border-primary/50 hover:bg-primary/10 backdrop-blur-sm"
+                asChild
+              >
+                <a href="https://blog.gustycube.com" target="_blank" rel="noopener noreferrer">
+                  <Globe className="mr-3 h-6 w-6" />
+                  My Blog
                 </a>
               </Button>
             </motion.div>

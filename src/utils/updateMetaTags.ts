@@ -62,16 +62,16 @@ function updateMetaTag(attrName: 'name' | 'property', attrValue: string, content
 
 // Default meta tags for main page
 export const DEFAULT_META_TAGS: MetaTagsConfig = {
-  title: 'Bennett Schwartz (GustyCube) - Full Stack Developer | AI Enthusiast',
-  description: 'Full Stack Developer specializing in AI development, educational tools, and innovative solutions. Currently working on Anchor Planner and EasilyAI.',
-  keywords: 'Bennett Schwartz, GustyCube, Full Stack Developer, AI Developer, Machine Learning, Python, JavaScript, TypeScript, React',
+  title: 'Bennett Schwartz | GustyCube - Full Stack Developer & Systems Architect',
+  description: 'Bennett Schwartz, also known as GustyCube, is a full-stack developer and founder building infrastructure-level software, scalable systems, and AI tooling. CEO of Ignyte Solutions.',
+  keywords: 'Bennett Schwartz, GustyCube, Bennett Schwartz developer, GustyCube developer, Full Stack Developer, Ignyte Solutions',
   ogUrl: 'https://gustycube.com/',
 };
 
 // Meta tags for Minecraft Portfolio page
 export const MINECRAFT_META_TAGS: MetaTagsConfig = {
-  title: 'Minecraft Portfolio - Bennett Schwartz (GustyCube)',
-  description: 'Explore my Minecraft-themed portfolio showcasing creative projects, custom builds, and development work in the Minecraft ecosystem.',
-  keywords: 'Bennett Schwartz, GustyCube, Minecraft, Portfolio, Game Development, Creative Builds, Minecraft Projects',
+  title: 'Minecraft Portfolio - Bennett Schwartz | GustyCube',
+  description: 'Bennett Schwartz (GustyCube) Minecraft portfolio showcasing creative projects, custom builds, and development work in the Minecraft ecosystem.',
+  keywords: 'Bennett Schwartz, GustyCube, Minecraft, Portfolio, Game Development, Creative Builds',
   ogUrl: 'https://gustycube.com/#minecraft-portfolio',
 };

@@ -2,32 +2,32 @@ import { motion } from 'motion/react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
-import { ExternalLink, Calendar, Users, Zap } from 'lucide-react';
+import { ExternalLink, Globe, Code2, Brain } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Anchor Planner',
-    description: 'An intuitive assignment planner app designed to help students organize their academic life and boost productivity.',
-    tags: ['React', 'Node.js', 'MongoDB', 'TypeScript'],
-    link: '#',
-    status: 'Active Development',
-    icon: Calendar
+    title: 'Ignyte Solutions',
+    description: 'Infrastructure-level networking software providing portable public IPv4 connectivity. Dedicated IPs that follow devices across networks using WireGuard-encrypted tunnels and DDoS-filtered edge ingress.',
+    tags: ['Networking', 'Distributed Systems', 'WireGuard', 'Infrastructure'],
+    link: 'https://ignyte.solutions',
+    status: 'Active',
+    icon: Globe
   },
   {
-    title: 'EasilyAI',
-    description: 'AI library collaboration project focused on making AI-powered coding accessible to beginners and developers alike.',
-    tags: ['Python', 'TensorFlow', 'Machine Learning', 'Education'],
-    link: '#',
-    status: 'Collaboration',
-    icon: Zap
+    title: 'EnsuraScript',
+    description: 'A declarative programming language for defining and enforcing system guarantees. Built for DevOps automation and configuration management.',
+    tags: ['Go', 'Programming Language', 'DevOps', 'CLI'],
+    link: 'https://github.com/GustyCube/EnsuraScript',
+    status: 'Open Source',
+    icon: Code2
   },
   {
-    title: 'Scratch Compiler',
-    description: 'Open source compiler project that bridges the gap between visual block-based programming and traditional text-based coding.',
-    tags: ['Compiler Design', 'JavaScript', 'Education', 'Open Source'],
-    link: '#',
-    status: 'Open for Collaboration',
-    icon: Users
+    title: 'ERR-EVAL',
+    description: 'Benchmark for evaluating AI epistemic reliability—testing how well LLMs handle uncertainty, avoid hallucinations, and acknowledge what they don\'t know.',
+    tags: ['Python', 'Machine Learning', 'AI', 'Benchmark'],
+    link: 'https://github.com/GustyCube/ERR-EVAL',
+    status: 'Open Source',
+    icon: Brain
   }
 ];
 
@@ -167,7 +167,7 @@ export function Projects() {
                           >
                             <Button
                               variant="outline"
-                              className="w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300"
+                              className="w-full hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
                               asChild
                             >
                               <a href={project.link}>
