@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bennett Schwartz — Full Stack Developer & Founder</title>
+  <meta name="description" content="Bennett Schwartz (GustyCube) — Full Stack Developer, Systems Architect, Founder & Entrepreneur. Building the future through code and exploring big ideas.">
+  <meta property="og:title" content="Bennett Schwartz — Full Stack Developer & Founder">
+  <meta property="og:description" content="Building the future through code and exploring big ideas.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --yellow: #FFE600;
+      --black: #000000;
+      --red: #FF3B30;
+      --blue: #0066FF;
+      --white: #FFFFFF;
+      --light-blue: #D6EAFF;
+      --shadow: 4px 4px 0px var(--black);
+      --shadow-hover: 6px 6px 0px var(--black);
+      --border: 3px solid var(--black);
+      --font-heading: 'Archivo Black', sans-serif;
+      --font-body: 'IBM Plex Mono', monospace;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--black);
+      background: var(--yellow);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ===== GLOBAL TYPOGRAPHY ===== */
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===== UTILITY ===== */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 40px;
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      padding: 8px 20px;
+      border: var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .card {
+      background: var(--white);
+      border: var(--border);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      border-radius: 0;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border: 2px solid var(--black);
+      background: var(--yellow);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin: 3px 2px;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border: var(--border);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      text-decoration: none;
+      border-radius: 0;
+    }
+
+    .btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px var(--black);
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .btn-blue {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .btn-dark {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--yellow);
+      border-bottom: var(--border);
+      padding: 12px 0;
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--red);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-toggle {
+      display: none;
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: var(--yellow);
+      padding: 160px 0 100px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      width: 100%;
+    }
+
+    .hero-name {
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      line-height: 0.95;
+      margin-bottom: 4px;
+    }
+
+    .hero-alias {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-weight: 600;
+      color: var(--red);
+      margin-bottom: 24px;
+    }
+
+    .hero-typing-wrapper {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 700;
+      margin-bottom: 20px;
+      min-height: 2.2em;
+    }
+
+    .hero-typing-wrapper .cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1.1em;
+      background: var(--red);
+      margin-left: 2px;
+      vertical-align: text-bottom;
+      animation: blink 0.7s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .hero-status {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      padding: 10px 18px;
+      background: var(--white);
+      border: var(--border);
+      box-shadow: var(--shadow);
+      display: inline-block;
+    }
+
+    .hero-tagline {
+      font-size: 1.1rem;
+      margin-bottom: 28px;
+      max-width: 600px;
+      line-height: 1.5;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+
+    .pill {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border: var(--border);
+      background: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      box-shadow: 3px 3px 0px var(--black);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .hero-socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.9rem;
+    }
+
+    .hero-socials a {
+      font-weight: 600;
+      border-bottom: 2px solid var(--black);
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+
+    .hero-socials a:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    /* ===== PROJECTS (variation: featured + 2-col grid) ===== */
+    .projects {
+      background: var(--white);
+      padding: 100px 0;
+      border-top: var(--border);
+      border-bottom: var(--border);
+    }
+
+    .project-featured {
+      margin-bottom: 28px;
+    }
+
+    .projects-grid-sub {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .project-card {
+      position: relative;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .project-title {
+      font-size: 1.4rem;
+    }
+
+    .project-status {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      text-transform: uppercase;
+      border: 2px solid var(--black);
+    }
+
+    .project-status.active {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .project-status.open-source {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .project-desc {
+      margin-bottom: 18px;
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .project-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .project-link {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      border-bottom: 3px solid var(--red);
+      padding-bottom: 2px;
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+
+    .project-link:hover {
+      color: var(--red);
+    }
+
+    /* ===== TECH STACK (variation: grouped rows inside single card) ===== */
+    .tech-stack {
+      background: var(--yellow);
+      padding: 100px 0;
+    }
+
+    .tech-unified {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .tech-row {
+      display: flex;
+      align-items: baseline;
+      padding: 18px 0;
+      border-bottom: 2px dashed rgba(0,0,0,0.12);
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tech-row:last-child {
+      border-bottom: none;
+    }
+
+    .tech-row h3 {
+      font-size: 0.9rem;
+      color: var(--red);
+      min-width: 120px;
+      flex-shrink: 0;
+    }
+
+    .tech-row .tech-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tech-row .tech-items .tag {
+      font-size: 0.78rem;
+      background: var(--yellow);
+    }
+
+    .tech-note {
+      font-size: 0.9rem;
+      font-style: italic;
+      opacity: 0.8;
+      margin-top: 12px;
+    }
+
+    /* ===== EXPERIENCE (variation: two-column date/content layout) ===== */
+    .experience {
+      background: var(--white);
+      padding: 100px 0;
+      border-top: var(--border);
+      border-bottom: var(--border);
+    }
+
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .exp-card-inner {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 24px;
+    }
+
+    .exp-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-top: 4px;
+    }
+
+    .exp-date {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+
+    .exp-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      background: var(--red);
+      color: var(--white);
+      text-transform: uppercase;
+      border: 2px solid var(--black);
+      width: fit-content;
+    }
+
+    .exp-main {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .exp-role {
+      font-size: 1.15rem;
+      margin-bottom: 2px;
+    }
+
+    .exp-company {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .exp-desc {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      margin-bottom: 10px;
+    }
+
+    .exp-link {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--blue);
+      border-bottom: 2px solid var(--blue);
+      width: fit-content;
+    }
+
+    .exp-link:hover {
+      color: var(--red);
+      border-color: var(--red);
+    }
+
+    /* ===== ABOUT (variation: two-column paragraph split) ===== */
+    .about {
+      background: var(--light-blue);
+      padding: 100px 0;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .about-col p {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .about-col p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ===== INTERESTS (variation: 2x2 with larger padding) ===== */
+    .interests {
+      background: var(--yellow);
+      padding: 100px 0;
+    }
+
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .interest-card {
+      padding: 36px 32px;
+    }
+
+    .interest-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    .interest-card p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    /* ===== CERTIFICATIONS (variation: 3-col compact) ===== */
+    .certifications {
+      background: var(--white);
+      padding: 100px 0;
+      border-top: var(--border);
+      border-bottom: var(--border);
+    }
+
+    .cert-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 20px;
+    }
+
+    .cert-bullet {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--red);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .cert-item .cert-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .cert-item .cert-provider {
+      font-size: 0.78rem;
+      opacity: 0.6;
+      font-weight: 500;
+    }
+
+    /* ===== CONTACT (variation: horizontal bar + CTA below) ===== */
+    .contact {
+      background: var(--light-blue);
+      padding: 100px 0;
+    }
+
+    .contact-methods {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .contact-methods .card {
+      flex: 1;
+    }
+
+    .contact-item h3 {
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      color: var(--red);
+    }
+
+    .contact-item a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-bottom: 2px solid var(--black);
+    }
+
+    .contact-item a:hover {
+      color: var(--red);
+      border-color: var(--red);
+    }
+
+    .contact-cta {
+      text-align: center;
+      padding: 48px;
+    }
+
+    .contact-cta h3 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+
+    .contact-cta p {
+      font-size: 0.95rem;
+      max-width: 550px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 48px 0;
+      border-top: 4px solid var(--red);
+    }
+
+    footer .container {
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.82rem;
+      margin-bottom: 8px;
+      opacity: 0.85;
+      line-height: 1.6;
+    }
+
+    footer a {
+      color: var(--yellow);
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* stagger children */
+    .stagger-children .fade-in:nth-child(1) { transition-delay: 0.05s; }
+    .stagger-children .fade-in:nth-child(2) { transition-delay: 0.1s; }
+    .stagger-children .fade-in:nth-child(3) { transition-delay: 0.15s; }
+    .stagger-children .fade-in:nth-child(4) { transition-delay: 0.2s; }
+    .stagger-children .fade-in:nth-child(5) { transition-delay: 0.25s; }
+    .stagger-children .fade-in:nth-child(6) { transition-delay: 0.3s; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--yellow);
+        border-bottom: var(--border);
+        padding: 20px 24px;
+        gap: 16px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .hero {
+        padding: 130px 0 60px;
+        min-height: auto;
+      }
+
+      .hero-name {
+        font-size: 2.6rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons .btn {
+        text-align: center;
+      }
+
+      .hero-socials {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+      }
+
+      .projects-grid-sub {
+        grid-template-columns: 1fr;
+      }
+
+      .exp-card-inner {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .exp-sidebar {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+
+      .interests-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cert-list {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-methods {
+        flex-direction: column;
+      }
+
+      .contact-cta {
+        padding: 32px 20px;
+      }
+
+      .contact-cta h3 {
+        font-size: 1.4rem;
+      }
+
+      .tech-row {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .tech-row h3 {
+        min-width: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cert-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <a href="#" class="nav-logo">GustyCube</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">///</button>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container hero-content">
+      <h1 class="hero-name">Bennett<br>Schwartz</h1>
+      <p class="hero-alias">(aka GustyCube)</p>
+      <div class="hero-typing-wrapper">
+        <span id="typed-text"></span><span class="cursor"></span>
+      </div>
+      <div class="hero-status">Available for Remote Roles &bull; United States</div>
+      <p class="hero-tagline">Building the future through code and exploring big ideas</p>
+      <div class="hero-pills">
+        <span class="pill">Coding</span>
+        <span class="pill">Ethics</span>
+        <span class="pill">Philosophy</span>
+        <span class="pill">Science</span>
+        <span class="pill">Democracy</span>
+        <span class="pill">Capitalism</span>
+      </div>
+      <div class="hero-buttons">
+        <a href="mailto:gc@gustycube.xyz" class="btn btn-primary">Let's Collaborate</a>
+        <a href="https://gustycubeventures.com" target="_blank" class="btn btn-blue">My Ventures</a>
+        <a href="https://github.com/gustycube" target="_blank" class="btn btn-secondary">View My Work</a>
+        <a href="https://blog.gustycube.com" target="_blank" class="btn btn-dark">My Blog</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://gustycube.com">Web &rarr; gustycube.com</a>
+        <a href="https://github.com/gustycube">Code &rarr; github.com/gustycube</a>
+        <a href="https://youtube.com/@gustycube">Video &rarr; youtube.com/@gustycube</a>
+        <a href="mailto:gc@gustycube.xyz">Mail &rarr; gc@gustycube.xyz</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS (variation: featured first project full-width, remaining 2-col) -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="stagger-children">
+
+        <div class="project-featured fade-in">
+          <div class="card project-card">
+            <div class="project-header">
+              <h3 class="project-title">Ignyte Solutions</h3>
+              <span class="project-status active">Active</span>
+            </div>
+            <p class="project-desc">Infrastructure-level networking software providing portable public IPv4 connectivity. Dedicated IPs that follow devices across networks using WireGuard-encrypted tunnels and DDoS-filtered edge ingress.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="tag">Networking</span>
+                <span class="tag">Distributed Systems</span>
+                <span class="tag">WireGuard</span>
+                <span class="tag">Infrastructure</span>
+              </div>
+              <a href="https://ignyte.solutions" target="_blank" class="project-link">Visit &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects-grid-sub">
+          <div class="card project-card fade-in">
+            <div class="project-header">
+              <h3 class="project-title">EnsuraScript</h3>
+              <span class="project-status open-source">Open Source</span>
+            </div>
+            <p class="project-desc">A declarative programming language for defining and enforcing system guarantees. Built for DevOps automation and configuration management.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="tag">Go</span>
+                <span class="tag">Programming Language</span>
+                <span class="tag">DevOps</span>
+                <span class="tag">CLI</span>
+              </div>
+              <a href="https://github.com/GustyCube/EnsuraScript" target="_blank" class="project-link">View Source &rarr;</a>
+            </div>
+          </div>
+
+          <div class="card project-card fade-in">
+            <div class="project-header">
+              <h3 class="project-title">ERR-EVAL</h3>
+              <span class="project-status open-source">Open Source</span>
+            </div>
+            <p class="project-desc">Benchmark for evaluating AI epistemic reliability—testing how well LLMs handle uncertainty, avoid hallucinations, and acknowledge what they don't know.</p>
+            <div class="project-footer">
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">AI</span>
+                <span class="tag">Benchmark</span>
+              </div>
+              <a href="https://github.com/GustyCube/ERR-EVAL" target="_blank" class="project-link">View Source &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK (variation: single card with grouped rows) -->
+  <section class="tech-stack" id="tech-stack">
+    <div class="container">
+      <h2 class="section-title">Tech Stack</h2>
+      <div class="card tech-unified fade-in">
+        <div class="tech-row">
+          <h3>Frontend</h3>
+          <div class="tech-items">
+            <span class="tag">React</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">TypeScript</span>
+          </div>
+        </div>
+        <div class="tech-row">
+          <h3>Backend</h3>
+          <div class="tech-items">
+            <span class="tag">Go</span>
+            <span class="tag">Python</span>
+          </div>
+        </div>
+        <div class="tech-row">
+          <h3>Databases</h3>
+          <div class="tech-items">
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Redis</span>
+          </div>
+        </div>
+        <div class="tech-row">
+          <h3>Infra</h3>
+          <div class="tech-items">
+            <span class="tag">Linux</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Cloudflare</span>
+          </div>
+        </div>
+        <div class="tech-row">
+          <h3>Environment</h3>
+          <div class="tech-items">
+            <span class="tag">macOS</span>
+            <span class="tag">VS Code</span>
+          </div>
+        </div>
+      </div>
+      <p class="tech-note">I probably forgot something... always learning!</p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE (variation: two-column date sidebar + content) -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="exp-list stagger-children">
+
+        <div class="card fade-in">
+          <div class="exp-card-inner">
+            <div class="exp-sidebar">
+              <p class="exp-date">Aug 2025 &ndash; Present</p>
+              <span class="exp-badge">Current</span>
+            </div>
+            <div class="exp-main">
+              <h3 class="exp-role">CEO &amp; Founder</h3>
+              <p class="exp-company">Ignyte Solutions</p>
+              <p class="exp-desc">Building infrastructure-level networking software focused on portable public IPv4 connectivity. Leading the design of Ignyte Direct—dedicated public IPs that follow devices across networks. Architecting distributed routing fabric using WireGuard-encrypted tunnels, DDoS-filtered edge ingress, and region-selectable origins.</p>
+              <a href="https://ignyte.solutions" target="_blank" class="exp-link">ignyte.solutions &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card fade-in">
+          <div class="exp-card-inner">
+            <div class="exp-sidebar">
+              <p class="exp-date">2025 &ndash; Present</p>
+              <span class="exp-badge">Current</span>
+            </div>
+            <div class="exp-main">
+              <h3 class="exp-role">CEO &amp; Owner</h3>
+              <p class="exp-company">Gainlabs.us</p>
+              <p class="exp-desc">Researching and developing cutting-edge technologies in various categories.</p>
+              <a href="https://gainlabs.us" target="_blank" class="exp-link">gainlabs.us &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card fade-in">
+          <div class="exp-card-inner">
+            <div class="exp-sidebar">
+              <p class="exp-date">Jan 2023 &ndash; Present</p>
+              <span class="exp-badge">Current</span>
+            </div>
+            <div class="exp-main">
+              <h3 class="exp-role">Founder</h3>
+              <p class="exp-company">GustyCube Ventures</p>
+              <p class="exp-desc">Independent technical studio focused on full-stack development, systems engineering, and experimental software projects. Building applications across frontend, backend, and infrastructure layers. Prototyping tools involving automation, networking, and developer productivity.</p>
+              <a href="https://gustycubeventures.com" target="_blank" class="exp-link">gustycubeventures.com &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT (variation: two-column paragraph split) -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">The Human Behind the Code</h2>
+      <div class="about-content fade-in">
+        <div class="about-col">
+          <p>I'm a passionate full-stack developer based in the United States, who discovered the magic of programming at just 5 years old. What started as childhood curiosity has evolved into a comprehensive expertise spanning multiple programming languages, frameworks, and cutting-edge technologies.</p>
+          <p>My journey through technology has been driven by an insatiable curiosity about how things work, from the smallest algorithms to the largest distributed systems. I believe in building solutions that not only solve problems but also push the boundaries of what's possible.</p>
+        </div>
+        <div class="about-col">
+          <p>Beyond coding, I'm deeply fascinated by all kinds of sciences — from computer science and mathematics to physics, biology, and cognitive science. I'm equally passionate about philosophy and ethics, exploring how technology intersects with human values and societal progress.</p>
+          <p>I believe in the power of democratic values and ethical approaches to technology development. My diverse interests fuel my approach to problem-solving, bringing interdisciplinary thinking to every project I tackle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERESTS (variation: 2x2 grid with larger cards) -->
+  <section class="interests" id="interests">
+    <div class="container">
+      <h2 class="section-title">Interests</h2>
+      <div class="interests-grid stagger-children">
+        <div class="card interest-card fade-in">
+          <h3>Philosophy &amp; Ethics</h3>
+          <p>Exploring the deeper questions of technology, society, and human nature.</p>
+        </div>
+        <div class="card interest-card fade-in">
+          <h3>Science &amp; Innovation</h3>
+          <p>Passionate about scientific discovery and technological advancement.</p>
+        </div>
+        <div class="card interest-card fade-in">
+          <h3>Democracy &amp; Society</h3>
+          <p>Advocating for democratic values and social progress through technology.</p>
+        </div>
+        <div class="card interest-card fade-in">
+          <h3>Capitalism &amp; Ethics</h3>
+          <p>Balancing free market principles with ethical business practices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS (variation: 3-column compact grid) -->
+  <section class="certifications" id="certifications">
+    <div class="container">
+      <h2 class="section-title">Certifications</h2>
+      <div class="cert-list stagger-children">
+        <div class="card cert-item fade-in">
+          <span class="cert-bullet">&raquo;</span>
+          <div>
+            <div class="cert-name">The Complete Node.js Developer Course (3rd Edition)</div>
+            <div class="cert-provider">Udemy</div>
+          </div>
+        </div>
+        <div class="card cert-item fade-in">
+          <span class="cert-bullet">&raquo;</span>
+          <div>
+            <div class="cert-name">Python for Data Science and Machine Learning Bootcamp</div>
+            <div class="cert-provider">Udemy</div>
+          </div>
+        </div>
+        <div class="card cert-item fade-in">
+          <span class="cert-bullet">&raquo;</span>
+          <div>
+            <div class="cert-name">The Web Developer Bootcamp 2023</div>
+            <div class="cert-provider">Udemy</div>
+          </div>
+        </div>
+        <div class="card cert-item fade-in">
+          <span class="cert-bullet">&raquo;</span>
+          <div>
+            <div class="cert-name">Java Programming Masterclass for Software Developers</div>
+            <div class="cert-provider">Udemy</div>
+          </div>
+        </div>
+        <div class="card cert-item fade-in">
+          <span class="cert-bullet">&raquo;</span>
+          <div>
+            <div class="cert-name">Master Modern JavaScript</div>
+            <div class="cert-provider">Udemy</div>
+          </div>
+        </div>
+        <div class="card cert-item fade-in">
+          <span class="cert-bullet">&raquo;</span>
+          <div>
+            <div class="cert-name">Develop Minecraft Plugins (Java)</div>
+            <div class="cert-provider">Udemy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-methods stagger-children">
+        <div class="card contact-item fade-in">
+          <h3>Email (Primary)</h3>
+          <a href="mailto:gc@gustycube.xyz">gc@gustycube.xyz</a>
+        </div>
+        <div class="card contact-item fade-in">
+          <h3>GitHub</h3>
+          <a href="https://github.com/gustycube" target="_blank">@gustycube</a>
+        </div>
+        <div class="card contact-item fade-in">
+          <h3>YouTube</h3>
+          <a href="https://youtube.com/@gustycube" target="_blank">@gustycube</a>
+        </div>
+      </div>
+      <div class="card contact-cta fade-in">
+        <h3>Ready to Start a Project?</h3>
+        <p>Whether you need help with AI development, full-stack applications, or infrastructure solutions, I'm here to help bring your ideas to life.</p>
+        <a href="mailto:gc@gustycube.xyz" class="btn btn-primary">Send Me an Email</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 GustyCube (Bennett Schwartz). Available for remote roles.</p>
+      <p><a href="#minecraft-portfolio">Minecraft Portfolio</a></p>
+      <p>Built with &#9829; using React, TypeScript, Tailwind CSS, and Motion. Powered by curiosity.</p>
+      <p>Always building, always learning, always improving</p>
+    </div>
+  </footer>
+
+  <script>
+    /* ===== TYPING ANIMATION ===== */
+    (function() {
+      var phrases = [
+        'Full Stack Developer',
+        'Systems Architect',
+        'Founder & Entrepreneur',
+        'AI Enthusiast',
+        'Science Lover',
+        'Philosophy Enthusiast',
+        'Ethics Advocate'
+      ];
+      var el = document.getElementById('typed-text');
+      var phraseIndex = 0;
+      var charIndex = 0;
+      var isDeleting = false;
+      var typeSpeed = 80;
+
+      function tick() {
+        var current = phrases[phraseIndex];
+
+        if (isDeleting) {
+          charIndex--;
+          typeSpeed = 40;
+        } else {
+          charIndex++;
+          typeSpeed = 80;
+        }
+
+        el.textContent = current.substring(0, charIndex);
+
+        if (!isDeleting && charIndex === current.length) {
+          typeSpeed = 2000;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          typeSpeed = 400;
+        }
+
+        setTimeout(tick, typeSpeed);
+      }
+
+      tick();
+    })();
+
+    /* ===== SCROLL REVEAL ===== */
+    (function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      document.querySelectorAll('.fade-in').forEach(function(el) {
+        observer.observe(el);
+      });
+    })();
+
+    /* ===== SMOOTH SCROLL FOR NAV LINKS (close mobile menu) ===== */
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
