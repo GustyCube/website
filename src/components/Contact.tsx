@@ -13,8 +13,8 @@ export function Contact() {
             <a href="https://github.com/gustycube" target="_blank">@gustycube</a>
           </div>
           <div className="card contact-item fade-in">
-            <h3>YouTube</h3>
-            <a href="https://youtube.com/@gustycube" target="_blank">@gustycube</a>
+            <h3>LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/gustycube/" target="_blank">@gustycube</a>
           </div>
         </div>
         <div className="card contact-cta fade-in">
