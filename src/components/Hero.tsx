@@ -11,11 +11,11 @@ const phrases = [
 ];
 
 export function Hero() {
-  const [text, setText] = useState('');
+  const [text, setText] = useState(phrases[0]);
 
   useEffect(() => {
     let phraseIndex = 0;
-    let charIndex = 0;
+    let charIndex = phrases[0].length;
     let isDeleting = false;
     let timer: ReturnType<typeof setTimeout>;
 
@@ -23,18 +23,19 @@ export function Hero() {
       const current = phrases[phraseIndex];
 
       if (!isDeleting) {
-        charIndex++;
-        setText(current.substring(0, charIndex));
-
-        if (charIndex === current.length) {
-          // Pause at end of phrase before deleting
-          timer = setTimeout(() => {
-            isDeleting = true;
-            tick();
-          }, 2000);
+        if (charIndex < current.length) {
+          charIndex++;
+          setText(current.substring(0, charIndex));
+          timer = setTimeout(tick, 80);
           return;
         }
-        timer = setTimeout(tick, 80);
+
+        // Pause at end of phrase before deleting
+        timer = setTimeout(() => {
+          isDeleting = true;
+          tick();
+        }, 2000);
+        return;
       } else {
         charIndex--;
         setText(current.substring(0, charIndex));

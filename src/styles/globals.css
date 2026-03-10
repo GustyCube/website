@@ -23,6 +23,19 @@ html {
   scroll-behavior: smooth;
 }
 
+.no-js .fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.no-js .minecraft-portfolio-page [style*="opacity:0"] {
+  opacity: 1 !important;
+}
+
+.no-js .minecraft-portfolio-page [style*="translateY("] {
+  transform: none !important;
+}
+
 body {
   font-family: var(--font-body);
   color: var(--black);
@@ -193,6 +206,10 @@ nav .container {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.no-js .nav-toggle {
+  display: none;
 }
 
 /* ===== HERO ===== */
@@ -738,6 +755,13 @@ footer a:hover {
 
   .nav-toggle {
     display: block;
+  }
+
+  .no-js .nav-links {
+    display: flex;
+    position: static;
+    border-bottom: none;
+    padding: 0;
   }
 
   .hero {

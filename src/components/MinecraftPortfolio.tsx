@@ -37,7 +37,7 @@ const minecraftProjects = [
 
 export function MinecraftPortfolio() {
   return (
-    <div className="dark min-h-screen bg-background text-foreground">
+    <div className="minecraft-portfolio-page dark min-h-screen bg-background text-foreground">
       <div className="relative">
         {/* Minecraft-themed background */}
         <div className="fixed inset-0 bg-gradient-to-br from-green-900/20 via-background to-emerald-900/10 pointer-events-none" />

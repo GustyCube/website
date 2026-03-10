@@ -59,6 +59,6 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build && vite build --ssr src/entry-server.tsx --outDir build/server && node scripts/prerender.mjs"
   }
 }

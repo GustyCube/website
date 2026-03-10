@@ -3,7 +3,7 @@
  * This ensures proper SEO when navigating between different sections
  */
 
-interface MetaTagsConfig {
+export interface MetaTagsConfig {
   title?: string;
   description?: string;
   keywords?: string;
@@ -73,5 +73,5 @@ export const MINECRAFT_META_TAGS: MetaTagsConfig = {
   title: 'Minecraft Portfolio - Bennett Schwartz | GustyCube',
   description: 'Bennett Schwartz (GustyCube) Minecraft portfolio showcasing creative projects, custom builds, and development work in the Minecraft ecosystem.',
   keywords: 'Bennett Schwartz, GustyCube, Minecraft, Portfolio, Game Development, Creative Builds',
-  ogUrl: 'https://gustycube.com/#minecraft-portfolio',
+  ogUrl: 'https://gustycube.com/minecraft-portfolio/',
 };
