@@ -74,6 +74,9 @@ export function Hero() {
           <span className="pill">Democracy</span>
           <span className="pill">Capitalism</span>
         </div>
+        <a href="https://ghcommits.com" target="_blank" rel="noopener noreferrer" className="hero-badge">
+          <img src="https://ghcommits.com/api/badge/GustyCube.svg" alt="GitHub Commits Badge" />
+        </a>
         <div className="hero-buttons">
           <a href="mailto:gc@gustycube.xyz" className="btn btn-primary">Let's Collaborate</a>
           <a href="https://gustycubeventures.com" target="_blank" className="btn btn-blue">My Ventures</a>

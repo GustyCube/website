@@ -148,7 +148,7 @@ a {
 /* ===== NAVBAR ===== */
 nav {
   position: fixed;
-  top: 0;
+  top: 30px;
   left: 0;
   right: 0;
   z-index: 1000;
@@ -213,9 +213,60 @@ nav .container {
 }
 
 /* ===== HERO ===== */
+/* ===== MARQUEE BANNER ===== */
+.marquee-banner {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001;
+  background: var(--black);
+  color: var(--yellow);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  overflow: hidden;
+  padding: 6px 0;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.marquee-banner:hover {
+  background: #111;
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-track span {
+  flex-shrink: 0;
+}
+
+.marquee-link {
+  color: #5ba3ff;
+  text-decoration: underline;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+}
+
+.hero-badge {
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.hero-badge img {
+  height: 28px;
+}
+
 .hero {
   background: var(--yellow);
-  padding: 160px 0 100px;
+  padding: 190px 0 100px;
   min-height: 100vh;
   display: flex;
   align-items: center;

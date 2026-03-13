@@ -68,6 +68,14 @@ export default function App({ initialRoute = '' }: AppProps) {
 
   return (
     <div>
+      <a href="https://ghcommits.com" target="_blank" rel="noopener noreferrer" className="marquee-banner">
+        <div className="marquee-track">
+          <span>Check out where you rank on the GitHub commits leaderboard — <span className="marquee-link">ghcommits.com</span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
+          <span>Check out where you rank on the GitHub commits leaderboard — <span className="marquee-link">ghcommits.com</span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
+          <span>Check out where you rank on the GitHub commits leaderboard — <span className="marquee-link">ghcommits.com</span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
+          <span>Check out where you rank on the GitHub commits leaderboard — <span className="marquee-link">ghcommits.com</span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
+        </div>
+      </a>
       <Navbar />
       <Hero />
       <Projects />
