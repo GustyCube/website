@@ -79,7 +79,6 @@ export function Hero() {
         </a>
         <div className="hero-buttons">
           <a href="mailto:gc@gustycube.xyz" className="btn btn-primary">Let's Collaborate</a>
-          <a href="https://gustycubeventures.com" target="_blank" className="btn btn-blue">My Ventures</a>
           <a href="https://github.com/BennettSchwartz" target="_blank" className="btn btn-secondary">View My Work</a>
           <a href="https://gustycube.substack.com" target="_blank" className="btn btn-dark">My Writing</a>
         </div>

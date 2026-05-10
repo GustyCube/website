@@ -32,20 +32,6 @@ export function Experience() {
               </div>
             </div>
           </div>
-          <div className="card fade-in">
-            <div className="exp-card-inner">
-              <div className="exp-sidebar">
-                <p className="exp-date">Jan 2023 – Present</p>
-                <span className="exp-badge">Current</span>
-              </div>
-              <div className="exp-main">
-                <h3 className="exp-role">Founder</h3>
-                <p className="exp-company">GustyCube Ventures</p>
-                <p className="exp-desc">Independent technical studio focused on full-stack development, systems engineering, and experimental software projects. Building applications across frontend, backend, and infrastructure layers. Prototyping tools involving automation, networking, and developer productivity.</p>
-                <a href="https://gustycubeventures.com" target="_blank" className="exp-link">gustycubeventures.com &rarr;</a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
