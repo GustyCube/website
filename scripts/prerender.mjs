@@ -16,10 +16,6 @@ const routes = [
     url: "/",
     outputPath: templatePath,
   },
-  {
-    url: "/minecraft-portfolio/",
-    outputPath: path.join(buildDir, "minecraft-portfolio", "index.html"),
-  },
 ];
 
 for (const route of routes) {

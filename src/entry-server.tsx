@@ -1,15 +1,12 @@
 import { renderToString } from "react-dom/server";
 import App from "./App";
-import { DEFAULT_META_TAGS, MINECRAFT_META_TAGS } from "./utils/updateMetaTags";
-import { getRouteFromLocation } from "./utils/routes";
+import { DEFAULT_META_TAGS } from "./utils/updateMetaTags";
 
 export function render(url: string) {
-  const targetUrl = new URL(url, DEFAULT_META_TAGS.ogUrl);
-  const route = getRouteFromLocation(targetUrl.pathname, targetUrl.hash);
-  const metaTags = route === "minecraft-portfolio" ? MINECRAFT_META_TAGS : DEFAULT_META_TAGS;
+  new URL(url, DEFAULT_META_TAGS.ogUrl);
 
   return {
-    appHtml: renderToString(<App initialRoute={route} />),
-    metaTags,
+    appHtml: renderToString(<App />),
+    metaTags: DEFAULT_META_TAGS,
   };
 }

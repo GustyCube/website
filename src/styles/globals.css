@@ -28,14 +28,6 @@ html {
   transform: translateY(0);
 }
 
-.no-js .minecraft-portfolio-page [style*="opacity:0"] {
-  opacity: 1 !important;
-}
-
-.no-js .minecraft-portfolio-page [style*="translateY("] {
-  transform: none !important;
-}
-
 body {
   font-family: var(--font-body);
   color: var(--black);

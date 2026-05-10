@@ -5,7 +5,6 @@ export function Certifications() {
     { name: 'The Web Developer Bootcamp 2023', provider: 'Udemy' },
     { name: 'Java Programming Masterclass for Software Developers', provider: 'Udemy' },
     { name: 'Master Modern JavaScript', provider: 'Udemy' },
-    { name: 'Develop Minecraft Plugins (Java)', provider: 'Udemy' },
   ];
 
   return (

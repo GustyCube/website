@@ -67,11 +67,3 @@ export const DEFAULT_META_TAGS: MetaTagsConfig = {
   keywords: 'Bennett Schwartz, GustyCube, Bennett Schwartz developer, Bennett H. Schwartz, Ignyte Solutions CEO, software researcher, AI developer, distributed systems, infrastructure software',
   ogUrl: 'https://gustycube.com/',
 };
-
-// Meta tags for Minecraft Portfolio page
-export const MINECRAFT_META_TAGS: MetaTagsConfig = {
-  title: 'Minecraft Portfolio - Bennett Schwartz | GustyCube',
-  description: 'Bennett Schwartz (GustyCube) Minecraft portfolio showcasing creative projects, custom builds, and development work in the Minecraft ecosystem.',
-  keywords: 'Bennett Schwartz, GustyCube, Minecraft, Portfolio, Game Development, Creative Builds',
-  ogUrl: 'https://gustycube.com/minecraft-portfolio/',
-};
