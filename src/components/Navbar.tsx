@@ -1,4 +1,4 @@
-import { XIcon, GlobeIcon, LinkedInIcon } from './SocialIcons';
+import { GitHubIcon, XIcon, GlobeIcon, LinkedInIcon } from './SocialIcons';
 
 export function Navbar() {
   return (
@@ -10,6 +10,9 @@ export function Navbar() {
         <a href="#about">About</a>
         <span className="nav-divider" aria-hidden="true" />
         <div className="nav-socials">
+          <a href="https://github.com/BennettSchwartz" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+            <GitHubIcon />
+          </a>
           <a href="https://x.com/BennettSchwartz" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" title="X (Twitter)">
             <XIcon />
           </a>
