@@ -1,10 +1,23 @@
 export function Footer() {
   return (
-    <footer>
-      <div className="container">
-        <p>&copy; 2026 GustyCube (Bennett Schwartz). Open to collaboration.</p>
-        <p>Built with &#9829; using React, TypeScript, Tailwind CSS, and Motion. Powered by curiosity.</p>
-        <p>Always building, always learning, always improving</p>
+    <footer className="footer">
+      <div className="footer-inner">
+        <span className="footer-brand">Bennett Schwartz</span>
+        <span className="footer-tagline">
+          <span>aka GustyCube</span>
+          <span className="sep">·</span>
+          <span><span className="flag">🇺🇸</span> United States</span>
+        </span>
+
+        <button className="footer-back-top" type="button" data-back-top>
+          Back to top <span className="arrow">↑</span>
+        </button>
+
+        <p className="footer-meta">
+          © 2026 Bennett Schwartz<span className="sep">·</span>Always building, always learning
+        </p>
+
+        <span className="footer-mark">MMXXVI</span>
       </div>
     </footer>
   );

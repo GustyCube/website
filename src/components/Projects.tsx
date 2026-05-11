@@ -1,73 +1,82 @@
+import { TextReveal } from './TextReveal';
+import { WordReveal } from './WordReveal';
+import type { CSSProperties } from 'react';
+
+interface Project {
+  num: string;
+  title: string;
+  status: 'active' | 'os';
+  statusLabel: string;
+  description: string;
+  tags: string[];
+  href: string;
+  linkLabel: string;
+}
+
+const projects: Project[] = [
+  {
+    num: '01',
+    title: 'Ignyte Solutions',
+    status: 'active',
+    statusLabel: 'Active',
+    description: 'Infrastructure-level networking software providing portable public IPv4 connectivity. Dedicated IPs that follow devices across networks using WireGuard-encrypted tunnels and DDoS-filtered edge ingress.',
+    tags: ['Networking', 'Distributed Systems', 'WireGuard', 'Infrastructure'],
+    href: 'https://ignyte.solutions',
+    linkLabel: 'Visit ignyte.solutions',
+  },
+  {
+    num: '02',
+    title: 'Membrane',
+    status: 'os',
+    statusLabel: 'Open Source',
+    description: 'Open source memory and learning substrate for AI agents. Lets systems persist context across runs, recall it semantically, and refine behavior over time.',
+    tags: ['Python', 'AI Agents', 'Memory', 'Open Source'],
+    href: 'https://github.com/bennettschwartz/membrane',
+    linkLabel: 'View source on GitHub',
+  },
+  {
+    num: '03',
+    title: 'Gain Laboratories',
+    status: 'active',
+    statusLabel: 'Active',
+    description: 'Building resilient navigation systems for GNSS-denied environments. Research focused on positioning that stays accurate where satellite signals fail.',
+    tags: ['Navigation', 'GNSS', 'Sensor Fusion', 'Research'],
+    href: 'https://gainlabs.us',
+    linkLabel: 'Visit gainlabs.us',
+  },
+];
+
 export function Projects() {
   return (
-    <section className="projects" id="projects">
-      <div className="container">
-        <h2 className="section-title">Featured Projects</h2>
-        <div className="stagger-children">
-          <div className="project-featured fade-in">
-            <div className="card project-card">
-              <div className="project-header">
-                <h3 className="project-title">Ignyte Solutions</h3>
-                <span className="project-status active">Active</span>
-              </div>
-              <p className="project-desc">
-                Infrastructure-level networking software providing portable public IPv4 connectivity. Dedicated IPs that follow devices across networks using WireGuard-encrypted tunnels &amp; DDoS-filtered edge ingress.
-              </p>
-              <div className="project-footer">
+    <section className="scene scene-work" id="work">
+      <div className="scene-work-inner">
+        <header className="section-header">
+          <span className="kicker"><TextReveal>01 / Work</TextReveal></span>
+          <TextReveal as="h2" className="section-title">Selected projects</TextReveal>
+          <p className="section-sub reveal-up delay-2" data-reveal>A short list — infrastructure networking, programming languages, and tools for evaluating AI systems.</p>
+        </header>
+
+        <div className="work-list">
+          {projects.map((p) => (
+            <article key={p.num} className="project" data-reveal>
+              <div className="project-num">{p.num}</div>
+              <div className="project-body">
+                <header className="project-header">
+                  <TextReveal as="h3" className="project-title">{p.title}</TextReveal>
+                  <span className={`project-status ${p.status}`}>{p.statusLabel}</span>
+                </header>
+                <WordReveal className="project-desc">{p.description}</WordReveal>
                 <div className="project-tags">
-                  <span className="tag">Networking</span>
-                  <span className="tag">Distributed Systems</span>
-                  <span className="tag">WireGuard</span>
-                  <span className="tag">Infrastructure</span>
+                  {p.tags.map((tag, i) => (
+                    <span key={tag} className="tag" style={{ '--i': i } as CSSProperties}>{tag}</span>
+                  ))}
                 </div>
-                <a href="https://ignyte.solutions" target="_blank" className="project-link">
-                  Visit &rarr;
+                <a className="project-link" href={p.href} target="_blank" rel="noopener noreferrer">
+                  {p.linkLabel} <span className="arrow">↗</span>
                 </a>
               </div>
-            </div>
-          </div>
-          <div className="projects-grid-sub">
-            <div className="card project-card fade-in">
-              <div className="project-header">
-                <h3 className="project-title">EnsuraScript</h3>
-                <span className="project-status open-source">Open Source</span>
-              </div>
-              <p className="project-desc">
-                A declarative programming language for defining and enforcing system guarantees. Built for DevOps automation and configuration management.
-              </p>
-              <div className="project-footer">
-                <div className="project-tags">
-                  <span className="tag">Go</span>
-                  <span className="tag">Programming Language</span>
-                  <span className="tag">DevOps</span>
-                  <span className="tag">CLI</span>
-                </div>
-                <a href="https://github.com/BennettSchwartz/EnsuraScript" target="_blank" className="project-link">
-                  View Source &rarr;
-                </a>
-              </div>
-            </div>
-            <div className="card project-card fade-in">
-              <div className="project-header">
-                <h3 className="project-title">ERR-EVAL</h3>
-                <span className="project-status open-source">Open Source</span>
-              </div>
-              <p className="project-desc">
-                Benchmark for evaluating AI epistemic reliability—testing how well LLMs handle uncertainty, avoid hallucinations, and acknowledge what they don&apos;t know.
-              </p>
-              <div className="project-footer">
-                <div className="project-tags">
-                  <span className="tag">Python</span>
-                  <span className="tag">Machine Learning</span>
-                  <span className="tag">AI</span>
-                  <span className="tag">Benchmark</span>
-                </div>
-                <a href="https://github.com/BennettSchwartz/ERR-EVAL" target="_blank" className="project-link">
-                  View Source &rarr;
-                </a>
-              </div>
-            </div>
-          </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

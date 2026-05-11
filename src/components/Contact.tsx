@@ -1,26 +1,37 @@
+import { TextReveal } from './TextReveal';
+import type { CSSProperties } from 'react';
+
+const socials = [
+  { label: 'GitHub', href: 'https://github.com/BennettSchwartz' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/gustycube/' },
+  { label: 'X (Twitter)', href: 'https://x.com/BennettSchwartz' },
+  { label: 'Substack', href: 'https://gustycube.substack.com' },
+];
+
 export function Contact() {
   return (
-    <section className="contact" id="contact">
-      <div className="container">
-        <h2 className="section-title">Contact</h2>
-        <div className="contact-methods stagger-children">
-          <div className="card contact-item fade-in">
-            <h3>Email (Primary)</h3>
-            <a href="mailto:gc@gustycube.xyz">gc@gustycube.xyz</a>
-          </div>
-          <div className="card contact-item fade-in">
-            <h3>GitHub</h3>
-            <a href="https://github.com/BennettSchwartz" target="_blank">@BennettSchwartz</a>
-          </div>
-          <div className="card contact-item fade-in">
-            <h3>LinkedIn</h3>
-            <a href="https://www.linkedin.com/in/gustycube/" target="_blank">@gustycube</a>
-          </div>
-        </div>
-        <div className="card contact-cta fade-in">
-          <h3>Ready to Start a Project?</h3>
-          <p>Whether you need help with AI development, full-stack applications, or infrastructure solutions, I'm here to help bring your ideas to life.</p>
-          <a href="mailto:gc@gustycube.xyz" className="btn btn-primary">Send Me an Email</a>
+    <section className="scene scene-contact" id="contact">
+      <div className="scene-contact-inner">
+        <header className="section-header">
+          <span className="kicker"><TextReveal>06 / Contact</TextReveal></span>
+          <TextReveal as="h2" className="section-title">Let&apos;s work together</TextReveal>
+          <p className="section-sub reveal-up delay-2" data-reveal>Open to collaboration on infrastructure, AI, and the spaces between.</p>
+        </header>
+
+        <a className="contact-cta reveal-up delay-3" data-reveal href="mailto:gc@gustycube.xyz">
+          gc@gustycube.xyz
+          <span className="arrow">↗</span>
+        </a>
+
+        <div className="contact-elsewhere">
+          <span className="contact-elsewhere-label">Elsewhere</span>
+          <nav className="contact-socials" data-reveal aria-label="Social links">
+            {socials.map((s, i) => (
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" style={{ '--i': i } as CSSProperties}>
+                {s.label} <span className="arrow">↗</span>
+              </a>
+            ))}
+          </nav>
         </div>
       </div>
     </section>

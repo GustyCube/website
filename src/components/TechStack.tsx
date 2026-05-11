@@ -1,50 +1,38 @@
+import { TextReveal } from './TextReveal';
+import type { CSSProperties } from 'react';
+
+const stack = [
+  { label: 'Frontend', items: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript'] },
+  { label: 'Backend', items: ['Go', 'Python'] },
+  { label: 'Databases', items: ['PostgreSQL', 'MongoDB', 'Redis'] },
+  { label: 'Infra', items: ['Linux', 'Docker', 'Cloudflare'] },
+  { label: 'Environment', items: ['macOS', 'VS Code'] },
+];
+
 export function TechStack() {
   return (
-    <section className="tech-stack" id="tech-stack">
-      <div className="container">
-        <h2 className="section-title">Tech Stack</h2>
-        <div className="card tech-unified fade-in">
-          <div className="tech-row">
-            <h3>Frontend</h3>
-            <div className="tech-items">
-              <span className="tag">React</span>
-              <span className="tag">Next.js</span>
-              <span className="tag">Tailwind CSS</span>
-              <span className="tag">TypeScript</span>
+    <section className="scene scene-stack" id="stack">
+      <div className="scene-stack-inner">
+        <header className="section-header">
+          <span className="kicker"><TextReveal>02 / Stack</TextReveal></span>
+          <TextReveal as="h2" className="section-title">The stack</TextReveal>
+          <p className="section-sub reveal-up delay-2" data-reveal>Languages, frameworks, and infrastructure I keep coming back to.</p>
+        </header>
+
+        <div className="stack-grid">
+          {stack.map((row) => (
+            <div key={row.label} className="stack-row" data-reveal>
+              <span className="stack-label"><TextReveal className="stack-label-inner">{row.label}</TextReveal></span>
+              <div className="stack-tags">
+                {row.items.map((tag, i) => (
+                  <span key={tag} className="tag" style={{ '--i': i } as CSSProperties}>{tag}</span>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="tech-row">
-            <h3>Backend</h3>
-            <div className="tech-items">
-              <span className="tag">Go</span>
-              <span className="tag">Python</span>
-            </div>
-          </div>
-          <div className="tech-row">
-            <h3>Databases</h3>
-            <div className="tech-items">
-              <span className="tag">PostgreSQL</span>
-              <span className="tag">MongoDB</span>
-              <span className="tag">Redis</span>
-            </div>
-          </div>
-          <div className="tech-row">
-            <h3>Infra</h3>
-            <div className="tech-items">
-              <span className="tag">Linux</span>
-              <span className="tag">Docker</span>
-              <span className="tag">Cloudflare</span>
-            </div>
-          </div>
-          <div className="tech-row">
-            <h3>Environment</h3>
-            <div className="tech-items">
-              <span className="tag">macOS</span>
-              <span className="tag">VS Code</span>
-            </div>
-          </div>
+          ))}
         </div>
-        <p className="tech-note">I probably forgot something... always learning!</p>
+
+        <p className="stack-footnote reveal-up" data-reveal>Always learning, always adding.</p>
       </div>
     </section>
   );
