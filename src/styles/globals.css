@@ -35,6 +35,7 @@ body { overflow-x: hidden; }
 
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+.arrow-icon { display: inline-block; width: 1em; height: 1em; flex-shrink: 0; vertical-align: -0.125em; }
 
 /* ═══════════════════════════════════════════════════════════
    Animated ASCII grid (canvas behind everything)

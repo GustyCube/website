@@ -1,4 +1,5 @@
 import { TextReveal } from './TextReveal';
+import { ArrowIcon } from './ArrowIcon';
 import type { CSSProperties } from 'react';
 
 const socials = [
@@ -20,7 +21,7 @@ export function Contact() {
 
         <a className="contact-cta reveal-up delay-3" data-reveal href="mailto:gc@gustycube.xyz">
           gc@gustycube.xyz
-          <span className="arrow">↗</span>
+          <ArrowIcon />
         </a>
 
         <div className="contact-elsewhere">
@@ -28,7 +29,7 @@ export function Contact() {
           <nav className="contact-socials" data-reveal aria-label="Social links">
             {socials.map((s, i) => (
               <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" style={{ '--i': i } as CSSProperties}>
-                {s.label} <span className="arrow">↗</span>
+                {s.label} <ArrowIcon />
               </a>
             ))}
           </nav>

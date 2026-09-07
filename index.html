@@ -8,8 +8,8 @@
     <!-- Primary Meta Tags -->
     <title>Bennett Schwartz - Software Developer, Researcher & Entrepreneur</title>
     <meta name="title" content="Bennett Schwartz - Software Developer, Researcher & Entrepreneur" />
-    <meta name="description" content="Bennett Schwartz (GustyCube) is an American software developer, researcher, and entrepreneur. CEO of Ignyte Solutions, specializing in AI, distributed systems, and infrastructure software." />
-    <meta name="keywords" content="Bennett Schwartz, GustyCube, Bennett Schwartz developer, Bennett H. Schwartz, Ignyte Solutions CEO, software researcher, AI developer, distributed systems, infrastructure software" />
+    <meta name="description" content="Bennett Schwartz (GustyCube) designs AR glasses at Gain Laboratories, builds memory for AI agents, and founded Veridity, a nonprofit for AI-assisted fact-checking of political livestreams." />
+    <meta name="keywords" content="Bennett Schwartz, GustyCube, Bennett Schwartz developer, Bennett H. Schwartz, Gain Laboratories, AR glasses, spatial computing, Veridity, nonprofit founder, political fact-checking, live fact-checking, software researcher, AI developer, distributed systems, infrastructure software" />
     <meta name="author" content="Bennett Schwartz" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="English" />
@@ -19,7 +19,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gustycube.com/" />
     <meta property="og:title" content="Bennett Schwartz - Software Developer, Researcher & Entrepreneur" />
-    <meta property="og:description" content="Official portfolio of Bennett Schwartz, also known as GustyCube. Founder and CEO of Ignyte Solutions, building scalable systems and AI tooling." />
+    <meta property="og:description" content="Bennett Schwartz (GustyCube) designs AR glasses at Gain Laboratories, builds memory for AI agents, and founded Veridity, a nonprofit for AI-assisted fact-checking of political livestreams." />
     <meta property="og:image" content="https://gustycube.com/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -31,7 +31,7 @@
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://gustycube.com/" />
     <meta property="twitter:title" content="Bennett Schwartz (@GustyCube) - Developer & Entrepreneur" />
-    <meta property="twitter:description" content="Bennett Schwartz (GustyCube) is a software developer and founder building infrastructure-level software and AI systems." />
+    <meta property="twitter:description" content="Bennett Schwartz (GustyCube) designs AR glasses at Gain Laboratories, builds memory for AI agents, and founded Veridity, a nonprofit for AI-assisted fact-checking of political livestreams." />
     <meta property="twitter:image" content="https://gustycube.com/og-image.jpg" />
     <meta property="twitter:image:alt" content="Bennett Schwartz (GustyCube) Portfolio" />
     <meta property="twitter:creator" content="@GustyCube" />
@@ -97,18 +97,12 @@
         }
       ],
       "mainEntityOfPage": "https://gustycube.com",
-      "description": "Bennett Schwartz, also known as GustyCube, is an American software developer, researcher, and entrepreneur. CEO of Ignyte Solutions, specializing in AI, distributed systems, and infrastructure software.",
+      "description": "Bennett Schwartz (GustyCube) designs AR glasses at Gain Laboratories, builds memory for AI agents, and founded Veridity, a nonprofit for AI-assisted fact-checking of political livestreams.",
       "identifier": [
         {
           "@type": "PropertyValue",
           "propertyID": "GitHub",
           "value": "bennettschwartz"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "Wikidata",
-          "value": "Q138790507",
-          "url": "https://www.wikidata.org/wiki/Q138790507"
         }
       ],
       "knowsAbout": [
@@ -131,29 +125,42 @@
         "https://x.com/BennettSchwartz",
         "https://www.reddit.com/user/GustyCube/",
         "https://www.linkedin.com/in/gustycube/",
-        "https://www.wikidata.org/wiki/Q138790507",
         "https://www.crunchbase.com/person/bennett-schwartz-fedc"
       ],
       "worksFor": {
-        "@type": "Organization",
-        "name": "Ignyte Solutions",
-        "url": "https://ignyte.solutions",
-        "sameAs": [
-          "https://www.wikidata.org/wiki/Q138870127",
-          "https://www.crunchbase.com/organization/ignyte-solutions",
-          "https://www.linkedin.com/company/ignyte-solutions"
-        ]
+        "@id": "https://gainlabs.us/#organization"
       },
-      "founder": [
+      "affiliation": {
+        "@id": "https://veridity.org/#organization"
+      }
+    }
+    </script>
+
+    <!-- Organizations Founded -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
         {
           "@type": "Organization",
-          "name": "Ignyte Solutions",
-          "sameAs": "https://www.wikidata.org/wiki/Q138870127"
+          "@id": "https://gainlabs.us/#organization",
+          "name": "Gain Laboratories",
+          "alternateName": "Gain Labs",
+          "url": "https://gainlabs.us",
+          "sameAs": "https://www.linkedin.com/company/gain-laboratories",
+          "founder": {
+            "@id": "https://gustycube.com/#person"
+          }
         },
         {
           "@type": "Organization",
-          "name": "Gain Laboratories",
-          "alternateName": "Gain Labs"
+          "@id": "https://veridity.org/#organization",
+          "name": "Veridity",
+          "url": "https://veridity.org",
+          "description": "A nonprofit for AI-assisted fact-checking of political livestreams.",
+          "founder": {
+            "@id": "https://gustycube.com/#person"
+          }
         }
       ]
     }

@@ -63,7 +63,7 @@ function updateMetaTag(attrName: 'name' | 'property', attrValue: string, content
 // Default meta tags for main page
 export const DEFAULT_META_TAGS: MetaTagsConfig = {
   title: 'Bennett Schwartz - Software Developer, Researcher & Entrepreneur',
-  description: 'Bennett Schwartz (GustyCube) is an American software developer, researcher, and entrepreneur. CEO of Ignyte Solutions, specializing in AI, distributed systems, and infrastructure software.',
-  keywords: 'Bennett Schwartz, GustyCube, Bennett Schwartz developer, Bennett H. Schwartz, Ignyte Solutions CEO, software researcher, AI developer, distributed systems, infrastructure software',
+  description: 'Bennett Schwartz (GustyCube) designs AR glasses at Gain Laboratories, builds memory for AI agents, and founded Veridity, a nonprofit for AI-assisted fact-checking of political livestreams.',
+  keywords: 'Bennett Schwartz, GustyCube, Bennett Schwartz developer, Bennett H. Schwartz, Gain Laboratories, AR glasses, spatial computing, Veridity, nonprofit founder, political fact-checking, live fact-checking, software researcher, AI developer, distributed systems, infrastructure software',
   ogUrl: 'https://gustycube.com/',
 };

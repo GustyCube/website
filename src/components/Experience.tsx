@@ -1,8 +1,9 @@
 import { TextReveal } from './TextReveal';
+import { ArrowIcon } from './ArrowIcon';
 import { WordReveal } from './WordReveal';
 
 interface Entry {
-  date: string;
+  date?: string;
   company: string;
   role: string;
   description: string;
@@ -12,20 +13,19 @@ interface Entry {
 
 const entries: Entry[] = [
   {
-    date: 'Aug 2025 → Present',
-    company: 'Ignyte Solutions',
-    role: 'CEO & Founder',
-    description: 'Leading the design of Ignyte Direct, our distributed routing fabric of WireGuard-encrypted tunnels and DDoS-filtered edge ingress. Setting product direction and technical strategy.',
-    href: 'https://ignyte.solutions',
-    linkLabel: 'ignyte.solutions',
-  },
-  {
     date: '2025 → Present',
     company: 'Gain Laboratories',
     role: 'CEO & Owner',
-    description: 'Running R&D across emerging technologies. Current focus on resilient navigation systems for GNSS-denied environments.',
+    description: 'Leading the design of AR glasses and an always-on spatial computing platform, from optics and displays to embedded computing and spatial sensing.',
     href: 'https://gainlabs.us',
     linkLabel: 'gainlabs.us',
+  },
+  {
+    company: 'Veridity',
+    role: 'Founder',
+    description: 'Founded a nonprofit focused on AI-assisted fact-checking for live political streams.',
+    href: 'https://veridity.org',
+    linkLabel: 'veridity.org',
   },
 ];
 
@@ -36,18 +36,18 @@ export function Experience() {
         <header className="section-header">
           <span className="kicker"><TextReveal>03 / Experience</TextReveal></span>
           <TextReveal as="h2" className="section-title">Currently</TextReveal>
-          <p className="section-sub reveal-up delay-2" data-reveal>Companies and projects I&apos;m running right now.</p>
+          <p className="section-sub reveal-up delay-2" data-reveal>Organizations and projects I&apos;m running right now.</p>
         </header>
 
         <div className="exp-list">
           {entries.map((e) => (
             <article key={e.company} className="exp-entry" data-reveal>
-              <p className="exp-date">{e.date}</p>
+              {e.date && <p className="exp-date">{e.date}</p>}
               <TextReveal as="h3" className="exp-company">{e.company}</TextReveal>
               <p className="exp-role">{e.role}</p>
               <WordReveal className="exp-desc">{e.description}</WordReveal>
               <a className="exp-link" href={e.href} target="_blank" rel="noopener noreferrer">
-                {e.linkLabel} <span className="arrow">↗</span>
+                {e.linkLabel} <ArrowIcon />
               </a>
             </article>
           ))}

@@ -3,7 +3,7 @@ import { TextReveal } from './TextReveal';
 const interests = [
   { num: '01', title: 'Philosophy & Ethics', desc: 'Exploring the deeper questions of technology, society, and human nature.' },
   { num: '02', title: 'Science & Innovation', desc: 'Passionate about scientific discovery and technological advancement.' },
-  { num: '03', title: 'Democracy & Society', desc: 'Advocating for democratic values and social progress through technology.' },
+  { num: '03', title: 'Civil Liberties', desc: 'Civil liberties maximalist.' },
   { num: '04', title: 'Capitalism & Ethics', desc: 'Balancing free market principles with ethical business practices.' },
 ];
 

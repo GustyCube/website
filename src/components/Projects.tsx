@@ -1,4 +1,5 @@
 import { TextReveal } from './TextReveal';
+import { ArrowIcon } from './ArrowIcon';
 import { WordReveal } from './WordReveal';
 import type { CSSProperties } from 'react';
 
@@ -16,16 +17,6 @@ interface Project {
 const projects: Project[] = [
   {
     num: '01',
-    title: 'Ignyte Solutions',
-    status: 'active',
-    statusLabel: 'Active',
-    description: 'Infrastructure-level networking software providing portable public IPv4 connectivity. Dedicated IPs that follow devices across networks using WireGuard-encrypted tunnels and DDoS-filtered edge ingress.',
-    tags: ['Networking', 'Distributed Systems', 'WireGuard', 'Infrastructure'],
-    href: 'https://ignyte.solutions',
-    linkLabel: 'Visit ignyte.solutions',
-  },
-  {
-    num: '02',
     title: 'Membrane',
     status: 'os',
     statusLabel: 'Open Source',
@@ -35,14 +26,24 @@ const projects: Project[] = [
     linkLabel: 'View source on GitHub',
   },
   {
-    num: '03',
+    num: '02',
     title: 'Gain Laboratories',
     status: 'active',
     statusLabel: 'Active',
-    description: 'Building resilient navigation systems for GNSS-denied environments. Research focused on positioning that stays accurate where satellite signals fail.',
-    tags: ['Navigation', 'GNSS', 'Sensor Fusion', 'Research'],
+    description: 'Designing AR glasses and an always-on spatial computing platform, with work across optics, embedded systems, spatial sensing, and wearable hardware.',
+    tags: ['AR Glasses', 'Spatial Computing', 'Optics', 'Embedded Systems'],
     href: 'https://gainlabs.us',
     linkLabel: 'Visit gainlabs.us',
+  },
+  {
+    num: '03',
+    title: 'Veridity',
+    status: 'active',
+    statusLabel: 'Nonprofit',
+    description: 'A nonprofit developing AI-assisted fact-checking for live political streams, helping viewers assess claims as they are made.',
+    tags: ['Fact-Checking', 'Political Livestreams', 'AI'],
+    href: 'https://veridity.org',
+    linkLabel: 'veridity.org',
   },
 ];
 
@@ -53,7 +54,7 @@ export function Projects() {
         <header className="section-header">
           <span className="kicker"><TextReveal>01 / Work</TextReveal></span>
           <TextReveal as="h2" className="section-title">Selected projects</TextReveal>
-          <p className="section-sub reveal-up delay-2" data-reveal>A short list — infrastructure networking, programming languages, and tools for evaluating AI systems.</p>
+          <p className="section-sub reveal-up delay-2" data-reveal>AR glasses, memory for AI agents, and live political fact-checking.</p>
         </header>
 
         <div className="work-list">
@@ -72,7 +73,7 @@ export function Projects() {
                   ))}
                 </div>
                 <a className="project-link" href={p.href} target="_blank" rel="noopener noreferrer">
-                  {p.linkLabel} <span className="arrow">↗</span>
+                  {p.linkLabel} <ArrowIcon />
                 </a>
               </div>
             </article>

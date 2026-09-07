@@ -1,4 +1,5 @@
 import { Navbar } from './Navbar';
+import { ArrowIcon } from './ArrowIcon';
 
 export function Hero() {
   return (
@@ -13,7 +14,7 @@ export function Hero() {
           <span><span className="flag">🇺🇸</span> Based in United States</span>
         </div>
         <p className="subtitle">Full Stack Software Developer, Researcher, and Entrepreneur</p>
-        <a className="cta" href="#contact">Get in touch <span className="arrow">↗</span></a>
+        <a className="cta" href="#contact">Get in touch <ArrowIcon /></a>
       </div>
 
       <div />

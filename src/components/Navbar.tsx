@@ -1,4 +1,5 @@
 import { GitHubIcon, XIcon, GlobeIcon, LinkedInIcon } from './SocialIcons';
+import { ArrowIcon } from './ArrowIcon';
 
 export function Navbar() {
   return (
@@ -25,7 +26,7 @@ export function Navbar() {
         </div>
         <a href="#contact" className="contact-cta">Contact</a>
       </nav>
-      <a className="menu-link" href="#contact">Contact <span aria-hidden="true">↗</span></a>
+      <a className="menu-link" href="#contact">Contact <ArrowIcon /></a>
     </div>
   );
 }
