@@ -449,34 +449,6 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   font-weight: 500;
 }
 
-.project-status {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-fade);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  opacity: 0;
-  transform: translateX(8px);
-  transition: opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s;
-}
-.project.in-view .project-status { opacity: 1; transform: translateX(0); }
-
-.project-status::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--ink-fade);
-}
-.project-status.active::before {
-  background: var(--status);
-  box-shadow: 0 0 0 3px rgba(42,140,74,0.18);
-}
-.project-status.os::before { background: var(--ink); }
-
 .project-desc {
   font-family: var(--body);
   font-size: clamp(1rem, 1.15vw, 1.15rem);
@@ -495,8 +467,6 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 .project.in-view .project-desc .word { opacity: 1; filter: blur(0); transform: translateY(0); }
 
-.project-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-
 .tag {
   font-family: var(--mono);
   font-size: 11px;
@@ -511,7 +481,6 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.2s ease, color 0.2s ease;
   transition-delay: calc(var(--i) * 60ms + 0.55s);
 }
-.project.in-view .tag { opacity: 1; transform: translateY(0); }
 .tag:hover { border-color: var(--ink); color: var(--ink); }
 
 .project-link {
@@ -1123,7 +1092,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .top, .name, .alias, .subtitle, .cta, .scroll-cue,
-  .reveal-up, .project, .project-num, .project-status,
+  .reveal-up, .project, .project-num,
   .project-desc .word, .tag, .project-link,
   .stack-row .tag,
   .exp-entry, .exp-date, .exp-role, .exp-desc .word, .exp-link,
